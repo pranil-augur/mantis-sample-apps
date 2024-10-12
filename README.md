@@ -8,6 +8,7 @@
 4. Init `mantis run --init <script_name>.tf.cue`
 5. Run plan `mantis run --plan <script_name>.tf.cue`
 6. Run apply `mantis run --apply <script_name>.tf.cue`
+7. Run destroy `mantis run --destroy <script_name>.tf.cue`
 
 ### Sample applications
 
