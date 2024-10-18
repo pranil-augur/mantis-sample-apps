@@ -22,7 +22,7 @@ flaskDynamoDBDeployment: {
             spec: {
                 containers: [{
                     name:  "flask-dynamodb-app"
-                    image: "\(common.container_repo)"
+                    image: "\(common.container_repo):latest"
                     ports: [{
                         containerPort: 5000
                     }]
@@ -51,7 +51,7 @@ flaskDynamoDBDeployment: {
                         },
                         {
                             name:  "DYNAMODB_TABLE_NAME"
-                            value: string | *null @var(table_name)
+                            value: "@var(table_name)"
                         }
                     ]
                 }]

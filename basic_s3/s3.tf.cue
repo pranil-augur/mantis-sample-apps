@@ -70,15 +70,7 @@ tasks: {
 		config: #aws_availability_zones
 		exports: [{
 			var: "available_zones"
-			path:  ".data.aws_availability_zones.available.id"
-		}]
-	}
-
-	local_eval: {
-		@task(mantis.core.Evaluate)
-		exports: [{	
-			cueexpr: "strings.Split(get_azs_data.exports[0].var, \"-\")[0]"
-			var: "first_az"
+			jqpath:  ".data.aws_availability_zones.available.id"
 		}]
 	}
 
@@ -89,7 +81,7 @@ tasks: {
 	}
 
 	setup_s3_1: {
-		@task(mantis.core.K8s)
+		@task(mantis.core.TF)
 		dep: [setup_s3]
 		config: #s3BucketConfig1
 	}
