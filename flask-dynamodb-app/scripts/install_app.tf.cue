@@ -1,7 +1,7 @@
 package main
 
 import (
-    "augur.ai/flask-dynamodb-app/defs"
+    "augur.ai/rds-flask-app/defs"
 )
 
 deploy_flask_dynamodb: {
@@ -41,11 +41,5 @@ deploy_flask_dynamodb: {
         @task(mantis.core.K8s)
         dep: [create_dynamodb_table]
         config: defs.flaskDynamoDBDeployment 
-    }
-
-    deploy_flask_service: {
-        @task(mantis.core.K8s)
-        dep: [deploy_flask_app]
-        config: defs.flaskDynamoDBService 
     }
 }
