@@ -14,3 +14,12 @@
 
 1. simple-s3 - sets up an s3 bucket on aws
 2. flask-dynamodb-app - sets up a cloud-native, flask app to run on kubernetes backed by dynamodb
+
+
+### Codegen usage
+
+mantis codegen --system-prompt prompts/terraform_prompt.md --code-dir databricks --prompt "create databricks job to deploy my notebook"
+
+mantis codegen --system-prompt prompts/terraform_prompt.md --code-dir pagerduty --prompt "generate configurations to create pager duty schedules for my platform team"
+
+mantis codegen --system-prompt prompts/kubernetes_prompt.md --code-dir flask_app  --prompt "generate configurations to deploy my flask app in AWS"
